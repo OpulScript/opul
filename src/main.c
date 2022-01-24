@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include "opul.h"
+#include "readfile.h"
 
 // entry point
 int main(int argc, char **argv){
@@ -13,9 +14,11 @@ int main(int argc, char **argv){
 
     // TODO: Code a CLI argument parser
 
-    // TODO: Read source file content
+    FILE *source_file = fopen(argv[1], "r");
+    char *source_code = readfile(source_file);
+    fclose(source_file);
 
-    opul_compile("");
+    opul_compile(source_code);
 
     return 0;
 }
