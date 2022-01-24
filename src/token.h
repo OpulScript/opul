@@ -1,3 +1,5 @@
+#pragma once
+
 #include <stdint.h>
 
 #define TOKEN_TYPE_NONE (uint8_t) 0
