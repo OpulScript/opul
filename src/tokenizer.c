@@ -7,7 +7,11 @@ int tokenize(char *code, token_t *tokens){
     uint64_t token_count = 0;
 
     while(*code){
-        if(*code == '+'){
+        if(*code == ' ' || *code == '\n' || *code == '\t' || *code == '\r'){
+            // do nothing, just skip character
+            code++;
+        }
+        else if(*code == '+'){
             token_t token;
             token_init(&token, TOKEN_TYPE_PLUS);
             tokens[token_count] = token;
