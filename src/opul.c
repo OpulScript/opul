@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "opul.h"
 #include "tokenizer.h"
 
 int opul_compile(char *code){
-    token_t *tokens = malloc(sizeof(token_t)*5);
+    // Tokenizer
+    // FIXME: Not very memory-efficient
+    // TODO: Move into tokenizer.c
+    token_t *tokens = malloc(sizeof(token_t)*strlen(code));
+
     if(tokenize(code, tokens)){
         return 1;
     }
