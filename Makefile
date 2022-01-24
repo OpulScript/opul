@@ -1,5 +1,7 @@
 export VERSION=0.0.1 # Opul version
 
+DEBUG=false
+
 CONFIG=config/mk/default.mk
 include $(CONFIG)
 
@@ -15,7 +17,11 @@ $(BUILD_DIR)/opul: $(OBJECTS_C)
 	@echo "--> Linked" $(notdir $@)
 
 $(BUILD_DIR)/obj/%.obj: src/%.c
-	@$(CC) -c $^ -o $@
+	@if [ $(DEBUG) = true ]; then\
+		$(CC) -c $^ -o $@ -D DEBUG=true;\
+	else\
+		$(CC) -c $^ -o $@;\
+	fi
 	@echo "--> Compiled" $^
 
 build_dirs:

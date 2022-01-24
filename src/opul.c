@@ -4,6 +4,7 @@
 
 #include "opul.h"
 #include "tokenizer.h"
+#include "debug.h"
 
 int opul_compile(char *code){
     // Tokenizer
@@ -15,9 +16,9 @@ int opul_compile(char *code){
         return 1;
     }
 
-    for(int i = 0; tokens[i].type; i++){
-        printf("%i\n", tokens[i].type);
-    }
+#ifdef DEBUG
+    print_tokens(tokens);
+#endif
 
     // TODO: Parse
 
