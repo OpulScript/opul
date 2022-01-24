@@ -18,7 +18,5 @@ int main(int argc, char **argv){
     char *source_code = readfile(source_file);
     fclose(source_file);
 
-    opul_compile(source_code);
-
-    return 0;
+    return opul_compile(source_code);
 }
