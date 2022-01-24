@@ -9,7 +9,7 @@ int opul_compile(char *code){
     // Tokenizer
     // FIXME: Not very memory-efficient
     // TODO: Move into tokenizer.c
-    token_t *tokens = malloc(sizeof(token_t)*strlen(code));
+    token_t *tokens = malloc(sizeof(token_t)*(strlen(code)+2));
 
     if(tokenize(code, tokens)){
         return 1;
