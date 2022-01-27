@@ -28,6 +28,7 @@ enum token_type{
 
 #define VALUE_TYPE_NONE (uint8_t) 0
 #define VALUE_TYPE_STRING (uint8_t) 1
+#define VALUE_TYPE_INT (uint8_t) 2
 
 typedef struct {
     uint8_t type;
