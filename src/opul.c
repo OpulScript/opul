@@ -7,6 +7,10 @@
 #include "debug.h"
 
 int opul_compile(char *code){
+#ifdef DEBUG
+    print_code(code);
+#endif
+
     // Tokenizer
     // FIXME: Not very memory-efficient
     // TODO: Move into tokenizer.c

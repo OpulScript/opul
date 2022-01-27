@@ -10,6 +10,8 @@ OBJECTS_C=$(patsubst src/%.c, $(BUILD_DIR)/obj/%.obj, $(SOURCES_C))
 
 all: opul
 
+remake: clean all
+
 opul: build_dirs $(BUILD_DIR)/opul
 
 $(BUILD_DIR)/opul: $(OBJECTS_C)
