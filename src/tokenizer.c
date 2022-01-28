@@ -10,7 +10,6 @@ int tokenize(char *code, token_t *tokens){
     uint64_t token_count = 0;
 
     while(*code){
-        printf("c: %c c+1:%c\n", *(code), *(code+1));
         if(*code == ' ' || *code == '\n' || *code == '\t' || *code == '\r'){
             // do nothing, just skip character
             code++;
