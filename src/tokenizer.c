@@ -7,8 +7,6 @@
 
 int tokenize(char *code, token_t *tokens){
 
-    //TODO: Implement number literals
-
     uint64_t token_count = 0;
 
     while(*code){
