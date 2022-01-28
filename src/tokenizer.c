@@ -52,7 +52,6 @@ int tokenize(char *code, token_t *tokens){
             token_init(&token, TOKEN_TYPE_INT_LIT, VALUE_TYPE_INT, &num);
             tokens[token_count] = token;
             token_count++;
-            code++;
         }
         else if(*code == '\"'){ // TODO: Optimize this to avoid double-recursion for strings
             code++; // skip first quote
