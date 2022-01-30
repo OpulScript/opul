@@ -43,12 +43,15 @@ int tokenize(char *code, token_t *tokens){
             }
 
             str[length] = '\0'; // null terminator
+            
+            int *num = malloc(sizeof(int));
+            *num = atoi(str); // convert string to integer
 
-            int num = atoi(str); // convert string to integer
+            printf("%i\n", *num);
             
             // add token
             token_t token;
-            token_init(&token, TOKEN_TYPE_INT_LIT, VALUE_TYPE_INT, &num);
+            token_init(&token, TOKEN_TYPE_INT_LIT, VALUE_TYPE_INT, num);
             tokens[token_count] = token;
             token_count++;
         }

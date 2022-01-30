@@ -38,6 +38,9 @@ void print_tokens(token_t *tokens){
             case VALUE_TYPE_STRING:
                 printf("%s", (char *)tokens[i].value);
                 break;
+            case VALUE_TYPE_INT:
+                printf("%i", *((int *)tokens[i].value));
+                break;
         }
 
         printf("\n");
