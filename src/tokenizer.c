@@ -46,8 +46,6 @@ int tokenize(char *code, token_t *tokens){
             
             int *num = malloc(sizeof(int));
             *num = atoi(str); // convert string to integer
-
-            printf("%i\n", *num);
             
             // add token
             token_t token;
